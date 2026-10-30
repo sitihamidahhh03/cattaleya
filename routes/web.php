@@ -55,6 +55,18 @@ Route::get('/preview/admin-pesanan-detail', function () {
     return view('admin.pesanan-detail');
 })->name('preview.admin-pesanan-detail');
 
+Route::get('/preview/admin-pelanggan', function () {
+    return view('admin.pelanggan');
+})->name('preview.admin-pelanggan');
+
+Route::get('/preview/admin-ketersediaan-kotak', function () {
+    return view('admin.ketersediaan-kotak');
+})->name('preview.admin-ketersediaan-kotak');
+
+Route::get('/preview/admin-transaksi-pembayaran', function () {
+    return view('admin.transaksi-pembayaran');
+})->name('preview.admin-transaksi-pembayaran');
+
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -73,15 +85,15 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     })->name('pesanan.detail');
 
     Route::get('/pelanggan', function () {
-        return view('admin.dashboard');
+        return view('admin.pelanggan');
     })->name('pelanggan');
 
     Route::get('/ketersediaan-kotak', function () {
-        return view('admin.dashboard');
+        return view('admin.ketersediaan-kotak');
     })->name('ketersediaan-kotak');
 
     Route::get('/transaksi-pembayaran', function () {
-        return view('admin.dashboard');
+        return view('admin.transaksi-pembayaran');
     })->name('transaksi-pembayaran');
 });
 

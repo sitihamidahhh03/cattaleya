@@ -22,10 +22,10 @@
             <nav class="flex flex-col gap-1">
                 @php
                     $isDashboard = request()->routeIs('dashboard*') || request()->routeIs('admin.dashboard*') || request()->routeIs('preview.admin-dashboard*');
-                    $isPesanan = request()->routeIs('admin.pesanan*') || request()->routeIs('preview.admin-pesanan*');
-                    $isPelanggan = request()->routeIs('admin.pelanggan*');
-                    $isKotak = request()->routeIs('admin.ketersediaan-kotak*');
-                    $isTransaksi = request()->routeIs('admin.transaksi-pembayaran*');
+                    $isPesanan = request()->routeIs('admin.pesanan*') || request()->routeIs('preview.admin-pesanan*') || request()->routeIs('preview.admin-pesanan-detail*');
+                    $isPelanggan = request()->routeIs('admin.pelanggan*') || request()->routeIs('preview.admin-pelanggan*');
+                    $isKotak = request()->routeIs('admin.ketersediaan-kotak*') || request()->routeIs('preview.admin-ketersediaan-kotak*');
+                    $isTransaksi = request()->routeIs('admin.transaksi-pembayaran*') || request()->routeIs('preview.admin-transaksi-pembayaran*');
                     $isProfil = request()->routeIs('profile.edit*');
                 @endphp
 
