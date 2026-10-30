@@ -31,6 +31,10 @@ Route::get('/bantuan-whatsapp', function () {
     return view('bantuan-whatsapp');
 })->name('bantuan-whatsapp');
 
+Route::get('/pembayaran', function () {
+    return view('pembayaran');
+})->name('pembayaran');
+
 Route::get('/preview/header', function () {
     return view('header-preview');
 })->name('preview.header');
@@ -43,6 +47,14 @@ Route::get('/preview/admin-dashboard', function () {
     return view('admin.dashboard');
 })->name('preview.admin-dashboard');
 
+Route::get('/preview/admin-pesanan', function () {
+    return view('admin.pesanan');
+})->name('preview.admin-pesanan');
+
+Route::get('/preview/admin-pesanan-detail', function () {
+    return view('admin.pesanan-detail');
+})->name('preview.admin-pesanan-detail');
+
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -53,8 +65,12 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     })->name('dashboard');
 
     Route::get('/pesanan', function () {
-        return view('admin.dashboard');
+        return view('admin.pesanan');
     })->name('pesanan');
+
+    Route::get('/pesanan/{id?}', function ($id = 'ORD-2025-0842') {
+        return view('admin.pesanan-detail', compact('id'));
+    })->name('pesanan.detail');
 
     Route::get('/pelanggan', function () {
         return view('admin.dashboard');

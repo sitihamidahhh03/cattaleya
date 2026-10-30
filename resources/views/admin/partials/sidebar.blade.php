@@ -21,12 +21,12 @@
             <p class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider mb-space-sm">Menu Utama</p>
             <nav class="flex flex-col gap-1">
                 @php
-                    $isDashboard = request()->routeIs('dashboard') || request()->routeIs('admin.dashboard');
-                    $isPesanan = request()->routeIs('admin.pesanan');
-                    $isPelanggan = request()->routeIs('admin.pelanggan');
-                    $isKotak = request()->routeIs('admin.ketersediaan-kotak');
-                    $isTransaksi = request()->routeIs('admin.transaksi-pembayaran');
-                    $isProfil = request()->routeIs('profile.edit');
+                    $isDashboard = request()->routeIs('dashboard*') || request()->routeIs('admin.dashboard*') || request()->routeIs('preview.admin-dashboard*');
+                    $isPesanan = request()->routeIs('admin.pesanan*') || request()->routeIs('preview.admin-pesanan*');
+                    $isPelanggan = request()->routeIs('admin.pelanggan*');
+                    $isKotak = request()->routeIs('admin.ketersediaan-kotak*');
+                    $isTransaksi = request()->routeIs('admin.transaksi-pembayaran*');
+                    $isProfil = request()->routeIs('profile.edit*');
                 @endphp
 
                 <!-- 1. Dashboard -->

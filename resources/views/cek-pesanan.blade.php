@@ -306,6 +306,10 @@
                                     Pelunasan sisa dan deposit sewa dilakukan saat serah terima fisik di studio atau transfer sebelum kurir berangkat.
                                 </p>
                             </div>
+                            <a href="{{ route('pembayaran') }}" class="w-full py-2.5 px-4 rounded-xl bg-primary text-on-primary font-label-md text-xs sm:text-label-md uppercase tracking-wider font-semibold flex items-center justify-center gap-2 shadow-xs hover:bg-primary-container transition-all">
+                                <span class="material-symbols-outlined text-base">receipt_long</span>
+                                <span>Lihat Tagihan & Gateway Pembayaran Midtrans</span>
+                            </a>
                         </div>
                     </div>
                 </div>

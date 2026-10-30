@@ -640,10 +640,8 @@
       btnSubmit.disabled = true;
 
       setTimeout(() => {
-        alert(`[Simulasi Midtrans Gateway]\n\nNomor Tagihan: CTL-${Date.now().toString().slice(-6)}\nPemesan: ${custName} (${custWa})\nItem: ${state.qty} Kotak ${state.seriesName}\nMetode: ${state.paymentMode === 'full' ? 'Bayar Penuh' : 'Down Payment 50%'}\nTotal Pembayaran: ${formatRp(amountToPay)}\n\nJendela pembayaran aman Midtrans Snap siap diarahkan.`);
-        btnSubmit.innerHTML = '<span class="material-symbols-outlined text-xl">lock</span> <span>Konfirmasi & Lanjut Pembayaran Midtrans</span>';
-        btnSubmit.disabled = false;
-      }, 1000);
+        window.location.href = "{{ route('pembayaran') }}";
+      }, 600);
     });
 
     // Pre-selection based on query string: ?series=...

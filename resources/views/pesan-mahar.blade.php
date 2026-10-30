@@ -521,7 +521,7 @@
         );
 
         if (confirmProceed) {
-            alert('Sistem sedang memuat Midtrans Snap Sandbox Modal. Kuitansi digital otomatis akan dikirim ke WhatsApp ' + wa);
+            window.location.href = "{{ route('pembayaran') }}";
         }
     }
 
