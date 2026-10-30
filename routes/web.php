@@ -67,9 +67,41 @@ Route::get('/preview/admin-transaksi-pembayaran', function () {
     return view('admin.transaksi-pembayaran');
 })->name('preview.admin-transaksi-pembayaran');
 
+Route::get('/preview/owner-dashboard', function () {
+    return view('owner.dashboard');
+})->name('preview.owner-dashboard');
+
+Route::get('/preview/owner-pesanan', function () {
+    return view('owner.pesanan');
+})->name('preview.owner-pesanan');
+
+Route::get('/preview/owner-pesanan-detail', function () {
+    return view('owner.pesanan-detail');
+})->name('preview.owner-pesanan-detail');
+
+Route::get('/preview/owner-transaksi-pembayaran', function () {
+    return view('owner.transaksi-pembayaran');
+})->name('preview.owner-transaksi-pembayaran');
+
+Route::get('/preview/owner-laporan', function () {
+    return view('owner.laporan');
+})->name('preview.owner-laporan');
+
 Route::get('/dashboard', function () {
-    return view('admin.dashboard');
+    $role = auth()->user()->role ?? 'admin';
+    if ($role === 'owner') {
+        return redirect()->route('owner.dashboard');
+    }
+    return redirect()->route('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/admin', function () {
+    return redirect()->route('admin.dashboard');
+});
+
+Route::get('/owner', function () {
+    return redirect()->route('owner.dashboard');
+});
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', function () {
@@ -80,9 +112,13 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         return view('admin.pesanan');
     })->name('pesanan');
 
-    Route::get('/pesanan/{id?}', function ($id = 'ORD-2025-0842') {
+    Route::get('/pesanan/detail/{id?}', function ($id = 'ORD-2025-0842') {
         return view('admin.pesanan-detail', compact('id'));
     })->name('pesanan.detail');
+
+    Route::get('/pesanan/{id}', function ($id = 'ORD-2025-0842') {
+        return view('admin.pesanan-detail', compact('id'));
+    });
 
     Route::get('/pelanggan', function () {
         return view('admin.pelanggan');
@@ -95,6 +131,32 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::get('/transaksi-pembayaran', function () {
         return view('admin.transaksi-pembayaran');
     })->name('transaksi-pembayaran');
+});
+
+Route::middleware(['auth', 'verified'])->prefix('owner')->name('owner.')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('owner.dashboard');
+    })->name('dashboard');
+
+    Route::get('/pesanan', function () {
+        return view('owner.pesanan');
+    })->name('pesanan');
+
+    Route::get('/pesanan/detail/{id?}', function ($id = 'ORD-2025-090') {
+        return view('owner.pesanan-detail', compact('id'));
+    })->name('pesanan.detail');
+
+    Route::get('/pesanan/{id}', function ($id = 'ORD-2025-090') {
+        return view('owner.pesanan-detail', compact('id'));
+    });
+
+    Route::get('/transaksi-pembayaran', function () {
+        return view('owner.transaksi-pembayaran');
+    })->name('transaksi-pembayaran');
+
+    Route::get('/laporan', function () {
+        return view('owner.laporan');
+    })->name('laporan');
 });
 
 Route::middleware('auth')->group(function () {
