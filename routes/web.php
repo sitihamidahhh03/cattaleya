@@ -39,9 +39,35 @@ Route::get('/preview/footer', function () {
     return view('footer-preview');
 })->name('preview.footer');
 
+Route::get('/preview/admin-dashboard', function () {
+    return view('admin.dashboard');
+})->name('preview.admin-dashboard');
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    Route::get('/pesanan', function () {
+        return view('admin.dashboard');
+    })->name('pesanan');
+
+    Route::get('/pelanggan', function () {
+        return view('admin.dashboard');
+    })->name('pelanggan');
+
+    Route::get('/ketersediaan-kotak', function () {
+        return view('admin.dashboard');
+    })->name('ketersediaan-kotak');
+
+    Route::get('/transaksi-pembayaran', function () {
+        return view('admin.dashboard');
+    })->name('transaksi-pembayaran');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
