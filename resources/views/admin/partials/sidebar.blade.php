@@ -2,14 +2,15 @@
     <div class="flex flex-col flex-1 overflow-y-auto">
         <!-- Logo & Studio Identity -->
         <div class="px-space-lg pt-space-lg pb-space-md">
-            <div class="flex items-center gap-space-sm mb-space-xs">
-                <span class="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span>
-                <span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">Atelier Seserahan</span>
+            <div class="flex items-center gap-3">
+                <img src="{{ asset('images/logo.jpg') }}" alt="Cattaleya Logo" class="w-10 h-10 rounded-xl object-cover shadow-xs ring-1 ring-outline-variant/50">
+                <div class="flex flex-col">
+                    <a href="{{ route('home') }}" class="inline-block group">
+                        <h1 class="font-headline-md text-headline-md text-primary tracking-tight leading-none group-hover:opacity-90 transition-opacity">Cattaleya</h1>
+                    </a>
+                    <p class="font-label-sm text-[10px] text-on-surface-variant mt-1 tracking-wider uppercase">Operasional &amp; Studio</p>
+                </div>
             </div>
-            <a href="{{ route('home') }}" class="inline-block group">
-                <h1 class="font-headline-md text-headline-md text-primary tracking-tight group-hover:opacity-90 transition-opacity">Cattaleya</h1>
-            </a>
-            <p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5 tracking-wider uppercase">Operasional &amp; Studio</p>
         </div>
 
         <div class="px-space-lg my-space-xs">

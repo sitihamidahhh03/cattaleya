@@ -134,9 +134,7 @@
                         <!-- Header with Atelier Monogram -->
                         <div class="flex items-center justify-between mb-6">
                             <a href="{{ route('home') }}" class="flex items-center gap-3 group">
-                                <div class="w-10 h-10 rounded-xl bg-secondary-container text-primary flex items-center justify-center font-headline-md text-xl font-bold shadow-xs group-hover:scale-105 transition-transform">
-                                    C
-                                </div>
+                                <img src="{{ asset('images/logo.jpg') }}" alt="Cattaleya" class="w-11 h-11 rounded-xl object-cover shadow-xs ring-1 ring-outline-variant/50 group-hover:scale-105 transition-transform">
                                 <div>
                                     <p class="font-headline-md text-xl text-on-surface tracking-tight leading-tight font-medium">Cattaleya</p>
                                     <p class="font-label-sm text-[10px] text-secondary tracking-widest uppercase">Seserahan &amp; Mahar</p>

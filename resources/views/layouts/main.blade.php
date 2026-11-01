@@ -8,6 +8,9 @@
 
     <title>@yield('title', 'Cattaleya - Atelier Mahar & Penyewaan Kotak Seserahan')</title>
 
+    <!-- Brand Favicon -->
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/logo.jpg') }}">
+
     <!-- Google Fonts & Material Symbols -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">

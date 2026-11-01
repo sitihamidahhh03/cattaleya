@@ -5,6 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="web_dashboard" name="shell-type">
     <title>@yield('title', 'Dashboard Operasional Admin') — Cattaleya Atelier</title>
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/logo.jpg') }}">
 
     <!-- Google Fonts Preconnect -->
     <link href="https://fonts.googleapis.com" rel="preconnect">

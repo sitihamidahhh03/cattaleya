@@ -3,8 +3,8 @@
         <!-- Logo & Brand Identity -->
         <div class="flex items-center gap-space-sm">
             <div class="relative flex items-center justify-center">
-                <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden shadow-[0_2px_8px_rgba(90,72,56,0.08)]">
-                    <span class="material-symbols-outlined text-primary text-xl">spa</span>
+                <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden shadow-[0_2px_8px_rgba(90,72,56,0.08)] ring-1 ring-outline-variant/50">
+                    <img src="{{ asset('images/logo.jpg') }}" alt="Cattaleya Logo" class="w-full h-full object-cover">
                 </div>
             </div>
             <div class="flex flex-col">
