@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Cattaleya - Atelier Mahar & Penyewaan Kotak Seserahan')
+@section('title', 'Cattaleya')
 
 @section('content')
 <div class="flex flex-col w-full">
@@ -278,6 +278,57 @@
 </div>
 </div>
 </section>
+
+    <!-- Studio Cattaleya Menteng Section -->
+    <section class="w-full pb-10 pt-16 lg:pt-20" id="studio">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="p-8 sm:p-12 rounded-3xl bg-surface-container-low border border-outline-variant/30 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="inline-flex items-center gap-2 text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+              <span class="material-symbols-outlined text-base">storefront</span>
+              <span>Lokasi Studio Atelier</span>
+            </div>
+            <h2 class="font-headline-md text-2xl sm:text-3xl text-on-surface font-medium leading-tight">
+              Studio Cattaleya Menteng, Jakarta Pusat
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Kami mengundang Anda dan keluarga untuk berkunjung langsung ke studio kami, menyentuh material mahar, mencocokkan palet warna busana pernikahan dengan pilihan bunga preserved, dan menikmati sesi konsultasi privat yang menenangkan.
+            </p>
+            <div class="space-y-2.5 pt-2 font-body-md text-body-md text-on-surface">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                <span>Jl. Teuku Cik Ditiro No. 42, Menteng, Jakarta Pusat 10310</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-xl">schedule</span>
+                <span>Senin - Sabtu: 09:00 - 18:00 WIB (Konsultasi dengan Janji Temu)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-xl">phone_in_talk</span>
+                <span>+62 822-1000-8899</span>
+              </div>
+            </div>
+            <div class="pt-4 flex flex-wrap gap-4">
+              <a href="https://wa.me/6282210008899?text=Halo%20Studio%20Cattaleya,%20saya%20ingin%20membuat%20janji%20temu%20konsultasi%20di%20Studio%20Menteng" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-on-primary font-title-md text-title-md hover:bg-primary-container transition-colors shadow-sm">
+                <span class="material-symbols-outlined text-xl">chat</span>
+                <span>Buat Janji Temu Studio</span>
+              </a>
+              <a href="{{ route('katalog') }}"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-surface text-secondary border border-outline-variant font-title-md text-title-md hover:bg-surface-container transition-colors shadow-xs">
+                <span class="material-symbols-outlined text-xl">auto_awesome</span>
+                <span>Lihat Katalog Karya</span>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-5 rounded-2xl overflow-hidden aspect-[4/3] bg-surface-container shadow-md border border-outline-variant/30">
+            <img class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7S084omFVxvYQYD54ims8BbC3xPxgK2baMd3UKmTw7Q6RH1csuGBRxEboLZrwLTsfEpeZ6UQLAvjjEVZMW6IB_Br1XdndaDu3MenISbSCY7r4UZFIs-jtksGVXDTyu2Hsjip2g1Fj4RAJKgngAl_zt_cUPvk-gwTz_HICJpGDKLd0Lhq21xCDKVWG7EjRu0YXa_TIjrghpWwJxFYhUM2PdRtT-oPAW9EPWeojeI-e2HwSI65Ta_xF"
+              alt="Atelier Wooden Chest Craftsmanship">
+          </div>
+        </div>
+      </div>
+    </section>
 
 </div>
 @endsection

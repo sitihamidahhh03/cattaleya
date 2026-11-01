@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="web_standard" name="shell-type">
 
-    <title>@yield('title', 'Cattaleya - Atelier Mahar & Penyewaan Kotak Seserahan')</title>
+    <title>@yield('title', 'Cattaleya')</title>
 
     <!-- Brand Favicon -->
     <link rel="icon" type="image/jpeg" href="{{ asset('images/logo.jpg') }}">
