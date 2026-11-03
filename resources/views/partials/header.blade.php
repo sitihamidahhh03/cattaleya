@@ -6,7 +6,6 @@
             <img alt="Cattaleya Atelier" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/60 group-hover:scale-105 transition-transform" src="{{ asset('images/logo.jpg') }}">
             <div class="flex flex-col">
                 <span class="font-headline-md text-headline-md tracking-tight text-primary leading-none">Cattaleya</span>
-                <span class="font-label-sm text-[10px] uppercase tracking-widest text-secondary mt-0.5 hidden sm:inline">Seserahan &amp; Mahar</span>
             </div>
         </a>
 
