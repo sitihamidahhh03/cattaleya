@@ -65,20 +65,34 @@
 
             @if (Route::has('login'))
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-xl bg-surface text-secondary border border-outline-variant font-label-md text-xs sm:text-label-md hover:bg-surface-container-high hover:text-on-surface transition-all">
-                        <span class="material-symbols-outlined text-base sm:text-lg leading-none">dashboard</span>
-                        <span class="hidden sm:inline">Dashboard</span>
-                    </a>
+                    @php
+                        $userRole = auth()->user()->role ?? 'admin';
+                        $roleLabel = $userRole === 'owner' ? 'Owner' : 'Admin';
+                    @endphp
+                    <div class="inline-flex items-center rounded-xl bg-surface text-secondary border border-outline-variant font-label-md text-xs sm:text-label-md shadow-xs overflow-hidden">
+                        <a href="{{ url('/dashboard') }}" class="inline-flex items-center gap-1.5 px-3 py-2 hover:bg-surface-container-high hover:text-on-surface transition-all" title="Buka Dashboard {{ $roleLabel }}">
+                            <span class="material-symbols-outlined text-base sm:text-lg leading-none text-primary">dashboard</span>
+                            <span class="hidden sm:inline font-semibold">Dashboard ({{ $roleLabel }})</span>
+                        </a>
+                        @if (Route::has('logout'))
+                            <form method="POST" action="{{ route('logout') }}" class="inline border-l border-outline-variant/60">
+                                @csrf
+                                <button type="submit" class="p-2 text-outline hover:text-error hover:bg-surface-container-highest transition-colors cursor-pointer flex items-center justify-center" title="Keluar / Logout">
+                                    <span class="material-symbols-outlined text-base leading-none">logout</span>
+                                </button>
+                            </form>
+                        @endif
+                    </div>
                 @else
-                    <a href="{{ route('login') }}" class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-xl bg-surface text-secondary border border-outline-variant font-label-md text-xs sm:text-label-md hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login-internal">
-                        <span class="material-symbols-outlined text-base sm:text-lg leading-none">lock</span>
-                        <span class="hidden sm:inline">Sign In</span>
+                    <a href="{{ route('login') }}" class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-xl bg-surface text-secondary border border-outline-variant font-label-md text-xs sm:text-label-md hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login-internal" title="Login Portal Internal (Admin &amp; Owner)">
+                        <span class="material-symbols-outlined text-base sm:text-lg leading-none text-primary">lock</span>
+                        <span class="hidden sm:inline">Login Admin / Owner</span>
                     </a>
                 @endauth
             @else
-                <a class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-xl bg-surface text-secondary border border-outline-variant font-label-md text-xs sm:text-label-md hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login-internal" href="#">
-                    <span class="material-symbols-outlined text-base sm:text-lg leading-none">lock</span>
-                    <span class="hidden sm:inline">Login Internal</span>
+                <a class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-xl bg-surface text-secondary border border-outline-variant font-label-md text-xs sm:text-label-md hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login-internal" href="{{ route('login') }}" title="Login Portal Internal">
+                    <span class="material-symbols-outlined text-base sm:text-lg leading-none text-primary">lock</span>
+                    <span class="hidden sm:inline">Login Admin / Owner</span>
                 </a>
             @endif
 
@@ -124,13 +138,43 @@
                 <span>Tentang Cattaleya</span>
                 <span class="material-symbols-outlined text-sm">chevron_right</span>
             </a>
-            <a @click="mobileMenuOpen = false" href="{{ route('bantuan-whatsapp') }}" class="py-2.5 {{ request()->routeIs('bantuan-whatsapp') ? 'text-primary font-semibold' : 'text-on-surface-variant hover:text-on-surface' }} flex items-center justify-between">
+            <a @click="mobileMenuOpen = false" href="{{ route('bantuan-whatsapp') }}" class="py-2.5 {{ request()->routeIs('bantuan-whatsapp') ? 'text-primary font-semibold' : 'text-on-surface-variant hover:text-on-surface' }} border-b border-outline-variant/30 flex items-center justify-between">
                 <span class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-lg text-primary">chat</span>
                     <span>Bantuan &amp; WhatsApp Resmi</span>
                 </span>
                 <span class="material-symbols-outlined text-sm">chevron_right</span>
             </a>
+
+            <!-- Mobile Auth Portal -->
+            <div class="pt-2">
+                @auth
+                    @php
+                        $userRole = auth()->user()->role ?? 'admin';
+                        $roleLabel = $userRole === 'owner' ? 'Owner' : 'Admin';
+                    @endphp
+                    <div class="flex items-center justify-between py-1">
+                        <a @click="mobileMenuOpen = false" href="{{ url('/dashboard') }}" class="flex items-center gap-2 text-primary font-semibold text-xs uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-lg">dashboard</span>
+                            <span>Dashboard ({{ $roleLabel }})</span>
+                        </a>
+                        @if (Route::has('logout'))
+                            <form method="POST" action="{{ route('logout') }}" class="inline">
+                                @csrf
+                                <button type="submit" class="text-[11px] font-semibold text-error hover:underline flex items-center gap-1 cursor-pointer">
+                                    <span class="material-symbols-outlined text-sm">logout</span>
+                                    <span>Logout</span>
+                                </button>
+                            </form>
+                        @endif
+                    </div>
+                @else
+                    <a @click="mobileMenuOpen = false" href="{{ route('login') }}" class="flex items-center gap-2 py-2 text-secondary hover:text-primary font-semibold text-xs uppercase tracking-wider">
+                        <span class="material-symbols-outlined text-lg text-primary">lock</span>
+                        <span>Login Admin / Owner</span>
+                    </a>
+                @endauth
+            </div>
         </nav>
     </div>
 

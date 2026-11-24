@@ -11,7 +11,7 @@
                 <a href="{{ route('home') }}" class="font-headline-md text-headline-md tracking-tight text-on-surface hover:text-primary transition-colors">
                     Cattaleya
                 </a>
-                <span class="font-label-sm text-label-sm tracking-wider uppercase text-outline">Owner Portal</span>
+                <span class="font-label-sm text-label-sm tracking-wider uppercase text-outline">Owner</span>
             </div>
         </div>
 
@@ -74,32 +74,32 @@
     </div>
 
     <!-- Owner Session & Identity Footer -->
-    <div class="flex flex-col gap-space-md pt-space-md">
-        <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-high rounded-full w-fit">
-            <span class="w-2 h-2 rounded-full bg-primary"></span>
-            <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Owner (Read-Only)</span>
-        </div>
-        <div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-xl">
-            <div class="flex items-center gap-space-sm">
-                <div class="relative">
-                    <img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UGcZm4X8zMfBUj21YAZFUgZgOp3l8W8dIxOP0TbhjPF6kk1kkISDTy1CyA8CSa8zOO-eTnCJtJmzfaPbZHIYzN5Q68sb_6tr0Cf3xZc4RUL_0POh5mGXB2oFiXmSA5qx0yMjaqoDIEci0U5QZeJ6Q7gsU556iMSup6-Ni1Otg_5ds_xxjvDx6dHnaxb1KE7orQ061rMTFfChbCon5fndr99-vHHTCOqh_7iZO0GrphDKFsc3LR159ZWrOnII7uWPF8TA0fXDkpuQ">
+    <div class="flex flex-col gap-space-sm pt-space-sm">
+        <div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-xl gap-2">
+            <div class="flex items-center gap-2.5 min-w-0 flex-1">
+                <div class="relative shrink-0">
+                    <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs ring-1 ring-outline-variant/40 shadow-xs">
+                        {{ strtoupper(substr(Auth::user()->name ?? 'O', 0, 1)) }}
+                    </div>
                     <div class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-surface-container-lowest"></div>
                 </div>
-                <div class="flex flex-col">
-                    <span class="font-title-md text-title-md text-on-surface leading-tight">{{ Auth::user()->name ?? 'Bpk. Hendra' }}</span>
-                    <span class="font-label-sm text-label-sm text-outline">Owner Cattaleya</span>
+                <div class="flex flex-col min-w-0 flex-1 overflow-hidden">
+                    <span class="text-xs sm:text-[13px] font-semibold text-on-surface leading-tight truncate whitespace-nowrap block" title="{{ Auth::user()->name ?? 'Owner Bisnis Cattaleya' }}">
+                        {{ Auth::user()->name ?? 'Owner Bisnis Cattaleya' }}
+                    </span>
+                    <span class="text-[11px] text-outline truncate whitespace-nowrap block">Owner Cattaleya</span>
                 </div>
             </div>
             @if(Route::has('logout'))
-                <form method="POST" action="{{ route('logout') }}" class="inline">
+                <form method="POST" action="{{ route('logout') }}" class="inline shrink-0">
                     @csrf
-                    <button type="submit" class="p-space-xs text-outline hover:text-error hover:bg-surface-container-highest rounded-lg transition-colors cursor-pointer" title="Keluar Portal">
-                        <span class="material-symbols-outlined text-xl">logout</span>
+                    <button type="submit" class="p-1.5 text-outline hover:text-error hover:bg-surface-container-highest rounded-lg transition-colors cursor-pointer flex items-center justify-center" title="Keluar Portal">
+                        <span class="material-symbols-outlined text-lg">logout</span>
                     </button>
                 </form>
             @else
-                <a class="p-space-xs text-outline hover:text-error hover:bg-surface-container-highest rounded-lg transition-colors" data-path="logout" href="#" title="Keluar Portal">
-                    <span class="material-symbols-outlined text-xl">logout</span>
+                <a class="p-1.5 text-outline hover:text-error hover:bg-surface-container-highest rounded-lg transition-colors shrink-0 flex items-center justify-center" data-path="logout" href="#" title="Keluar Portal">
+                    <span class="material-symbols-outlined text-lg">logout</span>
                 </a>
             @endif
         </div>

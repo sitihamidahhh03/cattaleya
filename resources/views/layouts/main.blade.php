@@ -103,13 +103,13 @@
                         "full": "0.75rem"
                     },
                     spacing: {
-                        "margin": "2rem",
-                        "space-lg": "1.5rem",
+                        "margin": "1.5rem",
+                        "space-lg": "1.25rem",
                         "space-sm": "0.5rem",
-                        "gutter": "1.5rem",
-                        "space-md": "1rem",
+                        "gutter": "1.25rem",
+                        "space-md": "0.875rem",
                         "space-xs": "0.25rem",
-                        "space-xl": "2.25rem"
+                        "space-xl": "1.75rem"
                     },
                     fontFamily: {
                         "headline-lg": ["Playfair Display", "serif"],
@@ -126,18 +126,18 @@
                         "title-md": ["Plus Jakarta Sans", "sans-serif"]
                     },
                     fontSize: {
-                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
-                        "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "500" }],
-                        "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }],
-                        "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
-                        "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-                        "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
-                        "metric-display": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-                        "title-lg": ["17px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }],
-                        "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "500" }],
-                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
-                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }],
-                        "title-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }]
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+                        "body-lg": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["13px", { "lineHeight": "19px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "metric-display": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "title-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["20px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["11.5px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "title-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }]
                     }
                 }
             }
@@ -152,7 +152,7 @@
 <body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-primary">
 
     <!-- Header Partial / Halaman Terpisah -->
-    @include('partials.header')
+    @include('user.partials.header')
 
     <!-- Main Content Slot -->
     <main class="w-full pt-20 bg-surface">
@@ -160,7 +160,7 @@
     </main>
 
     <!-- Footer Partial / Halaman Terpisah -->
-    @include('partials.footer')
+    @include('user.partials.footer')
 
     @stack('scripts')
 </body>

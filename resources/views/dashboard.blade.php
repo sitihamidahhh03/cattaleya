@@ -1,1 +1,0 @@
-<?php echo view('admin.dashboard')->render(); ?>

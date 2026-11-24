@@ -1,1 +1,1 @@
-@include('partials.header')
+@include('user.partials.header')

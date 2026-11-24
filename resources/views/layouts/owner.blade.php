@@ -90,13 +90,13 @@
                         "full": "0.75rem"
                     },
                     spacing: {
-                        "space-md": "1rem",
+                        "space-md": "0.875rem",
                         "space-sm": "0.5rem",
-                        "gutter": "1.5rem",
+                        "gutter": "1.25rem",
                         "space-xs": "0.25rem",
-                        "space-lg": "1.5rem",
-                        "space-xl": "2.25rem",
-                        "margin": "2rem"
+                        "space-lg": "1.25rem",
+                        "space-xl": "1.5rem",
+                        "margin": "1.5rem"
                     },
                     fontFamily: {
                         "headline-lg-mobile": [ "Playfair Display", "serif" ],
@@ -113,18 +113,18 @@
                         "body-lg": [ "Plus Jakarta Sans", "sans-serif" ]
                     },
                     fontSize: {
-                        "headline-lg-mobile": [ "22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "500" } ],
-                        "body-md": [ "13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" } ],
-                        "metric-display": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" } ],
-                        "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" } ],
-                        "display-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" } ],
-                        "headline-md": [ "20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "500" } ],
-                        "title-md": [ "15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" } ],
-                        "display-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" } ],
-                        "title-lg": [ "17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" } ],
-                        "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" } ],
-                        "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "500" } ],
-                        "body-lg": [ "15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ]
+                        "headline-lg-mobile": [ "18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" } ],
+                        "body-md": [ "13px", { "lineHeight": "19px", "letterSpacing": "0.01em", "fontWeight": "400" } ],
+                        "metric-display": [ "24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" } ],
+                        "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" } ],
+                        "display-lg": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" } ],
+                        "headline-md": [ "18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" } ],
+                        "title-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" } ],
+                        "display-lg-mobile": [ "20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" } ],
+                        "title-lg": [ "15px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" } ],
+                        "label-md": [ "11.5px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ],
+                        "headline-lg": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" } ],
+                        "body-lg": [ "14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ]
                     }
                 }
             }
@@ -137,11 +137,8 @@
 
     <!-- Main Owner Viewport -->
     <div class="pl-72">
-        <!-- Reusable Owner Header -->
-        @include('owner.partials.header')
-
         <!-- Dynamic Content Body -->
-        <main class="relative pt-16 bg-surface min-h-screen w-full px-margin py-margin">
+        <main class="relative bg-surface min-h-screen w-full px-margin py-margin">
             @yield('content')
         </main>
     </div>

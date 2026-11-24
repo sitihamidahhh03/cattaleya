@@ -1,1 +1,1 @@
-@include('partials.footer')
+@include('user.partials.footer')
